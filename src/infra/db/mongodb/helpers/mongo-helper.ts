@@ -1,14 +1,10 @@
-import { MongoClient, Collection } from 'mongodb'
-import { ConnectionOptions } from 'tls'
+import { MongoClient, type Collection } from 'mongodb'
 
 export const MongoHelper = {
   client: null as unknown as MongoClient,
 
   async connect (uri: string): Promise<void> {
-    this.client = await MongoClient.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    } as ConnectionOptions)
+    this.client = await MongoClient.connect(uri)
   },
 
   async disconnect (): Promise<void> {
@@ -20,7 +16,7 @@ export const MongoHelper = {
   },
 
   map (collection: any): any {
-    const { _id, ...collectionWithoutId } = collection    
+    const { _id, ...collectionWithoutId } = collection
     return Object.assign({}, collectionWithoutId, { id: _id.toString() })
   }
 }
