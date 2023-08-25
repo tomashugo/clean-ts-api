@@ -26,6 +26,6 @@ describe('Log Mongo Repository', () => {
     const sut = makeSut()
     await sut.logError('any_error')
     const count = await errorCollection.countDocuments()
-    expect(count).toBe(0)
+    expect(count).toBe(1)
   })
 })
