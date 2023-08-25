@@ -1,6 +1,6 @@
+import { InvalidParamError, MissingParamError } from '../../errors'
 import { SignUpController } from './signup'
-import { MissingParamError, InvalidParamError, ServerError } from '../../errors'
-import { type EmailValidator, type AccountModel, type AddAccount, type AddAccountModel } from './signup-protocols'
+import { type AccountModel, type AddAccount, type AddAccountModel, type EmailValidator } from './signup-protocols'
 
 const makeEmailValidator = (): EmailValidator => {
   class EmailValidatorStub implements EmailValidator {
@@ -164,7 +164,7 @@ describe('SignUp Controller', () => {
     }
     const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(500)
-    expect(httpResponse.body).toEqual(new ServerError())
+    expect(httpResponse.body.name).toEqual('ServerError')
   })
 
   test('Should call AddAccount with correct values', async () => {
@@ -203,7 +203,7 @@ describe('SignUp Controller', () => {
     }
     const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(500)
-    expect(httpResponse.body).toEqual(new ServerError())
+    expect(httpResponse.body.name).toEqual('ServerError')
   })
 
   test('Should return 200 if valid data is provided', async () => {
