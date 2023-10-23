@@ -3,7 +3,7 @@ import { type Controller, type HttpRequest, type HttpResponse } from '../../pres
 
 export class LogControllerDecorator implements Controller {
   constructor (
-    private readonly controller: Controller, 
+    private readonly controller: Controller,
     private readonly logErrorRepository: LogErrorRepository) {
   }
 

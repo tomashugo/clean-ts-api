@@ -45,10 +45,11 @@
     "mongodb-memory-server": "^9.0.0",
     "remove": "^0.1.5",
     "validator": "^13.11.0"
-  }, "config": {
+  },
+  "config": {
     "mongodbMemoryServer": {
-    "debug": "1",
-    "arch": "x64"
-     }
+      "debug": "1",
+      "arch": "x64"
     }
+  }
 }
