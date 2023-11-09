@@ -53,5 +53,8 @@
       "debug": "1",
       "arch": "x64"
     }
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
