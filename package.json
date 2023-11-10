@@ -12,8 +12,7 @@
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
     "test:staged": "npm test",
-    "test:ci": "npm test -- --coverage",
-    "prepare": "husky install"
+    "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
   "author": "Tomás Almeida",
@@ -55,6 +54,6 @@
     }
   },
   "engines": {
-    "node": "12.x"
+    "node": "20.x"
   }
 }
