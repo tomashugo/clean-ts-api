@@ -1,4 +1,3 @@
 FROM node:20
-WORKDIR /home/dev/clean-node-api
-COPY ./package.json .
+WORKDIR /usr/src/clean-node-api
 RUN npm install --omit=dev
