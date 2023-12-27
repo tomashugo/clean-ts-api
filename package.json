@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/main/server.js",
     "build": "rimraf dist && tsc",
-    "debug": "node --inspect=0.0.0.0:9222 --nolazy dist/main/server.js",
+    "debug": "nodemon -L --watch ./dist --inspect=0.0.0.0:9222 --nolazy dist/main/server.js",
     "up": "npm run build && docker-compose up -d",
     "down": "docker-compose down",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
@@ -45,6 +45,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^5.9.2",
     "mongodb-memory-server": "^9.0.0",
+    "nodemon": "^3.0.2",
     "remove": "^0.1.5",
     "validator": "^13.11.0"
   },
