@@ -3,3 +3,4 @@ dist
 coverage
 .husky
 data
+!src/data
