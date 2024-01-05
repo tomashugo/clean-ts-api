@@ -1,12 +1,12 @@
-import { hash } from 'bcrypt'
-import { type Collection } from 'mongodb'
 import request from 'supertest'
-import { MongoHelper } from '../../infra/db/mongodb/helpers/mongo-helper'
 import app from '../config/app'
+import { hash } from 'bcrypt'
+import { MongoHelper } from '../../infra/db/mongodb/helpers/mongo-helper'
+import { type Collection } from 'mongodb'
 
 let accountCollection: Collection
 
-describe('Login Routes', () => {
+describe('Login Routes', () => { 
   beforeAll(async () => {
     await MongoHelper.connect(process.env.MONGO_URL as string)
   })
@@ -22,6 +22,7 @@ describe('Login Routes', () => {
 
   describe('POST /signup', () => {
     test('Should return 200 on signup', async () => {
+      
       await request(app)
         .post('/api/signup')
         .send({
